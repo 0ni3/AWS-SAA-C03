@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+echo "== deploy s3 bucket via cfn"
+
+STACK_NAME="iac-s3-bucket"
+
+aws cloudformation deploy \
+    --template-file template.yaml \
+    -- region eu-central-1 \
+    --stack-name $STACK_NAME \
+
